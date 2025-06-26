@@ -1,92 +1,90 @@
-# 🅿️ PK4U-DB-Scripts: Herramienta de Población para MongoDB
-<!--
-![PK4U Logo](https://raw.githubusercontent.com/Jefffer/pk4u-frontend/main/public/pk4u-v1.png)
--->
-Este repositorio contiene scripts Node.js diseñados para facilitar la **población inicial y la simulación de datos** en tu base de datos MongoDB para el sistema **PK4U (Parking for You)**. Estos scripts te permitirán insertar información de parkings y generar datos de plazas de aparcamiento por planta, esenciales para el funcionamiento de la aplicación.
+# 🅿️ PK4U-DB-Scripts: Population Tool for MongoDB
+This repository contains Node.js scripts designed to facilitate **initial data population and simulation** in your MongoDB database for the **PK4U (Parking for You)** system. These scripts will allow you to insert parking information and generate parking spot data per floor, which is essential for the application's operation.
 
-## 🚀 Empezando
+## 🚀 Getting Started
 
-Sigue estos pasos para clonar el repositorio, configurar tu entorno y ejecutar los scripts para poblar tu base de datos de MongoDB.
+Follow these steps to clone the repository, set up your environment, and run the scripts to populate your MongoDB database.
 
-### 📋 Requisitos Previos
+### 📋 Prerequisites
 
-Asegúrate de tener instalado lo siguiente en tu sistema antes de continuar:
+Make sure you have the following installed on your system before proceeding:
 
-* **Node.js**: Versión `v18` o superior. Puedes descargarlo desde [nodejs.org](https://nodejs.org/).
-* **npm** (Node Package Manager): Se incluye automáticamente con la instalación de Node.js.
-* **MongoDB Atlas (o una instancia local de MongoDB)**: Necesitarás una base de datos MongoDB accesible para que los scripts puedan interactuar con ella. Se recomienda el uso de [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) para una configuración sencilla y rápida.
+* **Node.js**: Version `v18` or higher. You can download it from [nodejs.org](https://nodejs.org/).
+* **npm** (Node Package Manager): Automatically included with Node.js installation.
+* **MongoDB Atlas (or a local MongoDB instance)**: You will need an accessible MongoDB database for the scripts to interact with. Using [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) is recommended for quick and easy setup.
 
-### ⬇️ Clonar el Repositorio
+### ⬇️ Clone the Repository
 
-Primero, clona este repositorio en tu máquina local usando Git y navega hasta el directorio del proyecto:
+First, clone this repository to your local machine using Git and navigate to the project directory:
 
 ```bash
-git clone [https://github.com/Jefffer/pk4u-db-scripts.git](https://github.com/Jefffer/pk4u-db-scripts.git)
+git clone https://github.com/Jefffer/pk4u-db-scripts.git
 cd pk4u-db-scripts
 ```
 
-### 📦 Instalación de Dependencias
-Una vez dentro de la carpeta del proyecto, instala las dependencias necesarias. Utiliza `npm init -y` para crear un archivo `package.json` si aún no existe, y luego instala las librerías:
+### 📦 Install Dependencies
+Once inside the project folder, install the necessary dependencies. Use `npm init -y` to create a `package.json` file if it doesn't already exist, then install the libraries:
 
 ```bash
-npm init -y # Solo si no tienes un package.json
+npm init -y # Only if you don't have a package.json
 npm install mongodb dotenv
 ```
 
-* `mongodb`: Este es el driver oficial de MongoDB para Node.js, esencial para que los scripts puedan conectarse e interactuar con tu base de datos.
-* `dotenv`: Una librería ligera y segura que carga variables de entorno desde un archivo `.env` en `process.env`, evitando que tus credenciales sensibles queden expuestas directamente en el código fuente.
+* `mongodb`: This is the official MongoDB driver for Node.js, essential for the scripts to connect and interact with your database.
+* `dotenv`: A lightweight and secure library that loads environment variables from an `.env` file into `process.env`, preventing sensitive credentials from being directly exposed in the source code.
 
-### ⚙️ Configuración del Entorno
-Para que los scripts puedan establecer una conexión con tu base de datos MongoDB, es fundamental configurar tu cadena de conexión.
+### ⚙️ Environment Configuration
+For the scripts to establish a connection with your MongoDB database, it's crucial to configure your connection string.
 
-1. En la raíz de la carpeta `pk4u-db-scripts`, crea un nuevo archivo llamado `.env`.
-2. Dentro de este archivo `.env`, añade tu cadena de conexión a MongoDB Atlas (o la URL de tu instancia local de MongoDB). El formato debe ser el siguiente:
+1.  In the root of the `pk4u-db-scripts` folder, create a new file named `.env`.
+2.  Inside this `.env` file, add your MongoDB Atlas connection string (or the URL of your local MongoDB instance). The format should be as follows:
 
 ```bash
 MONGODB_URI="mongodb+srv://<username>:<password>@<your-cluster-url>/pk4u?retryWrites=true&w=majority"
 ```
 
-⚠️ ¡Importante!
+⚠️ Important!
 
-Reemplaza `<username>`, `<password>` y `<your-cluster-url>` con tus propias credenciales y la URL de tu clúster de MongoDB Atlas.
+Replace `<username>`, `<password>`, and `<your-cluster-url>` with your own credentials and the URL of your MongoDB Atlas cluster.
 
-### 🏃 Ejecutar los Scripts de Población
-Una vez que hayas clonado el repositorio y configurado el archivo `.env`, estás listo para ejecutar el script de población.
+### 🏃 Run Population Scripts
+Once you have cloned the repository and configured the `.env` file, you are ready to run the population script.
 
-Para ejecutar el script `generateSpots.js` y poblar tu base de datos:
+To run the `generateSpots.js` script and populate your database:
 
 ```bash
 node generateSpots.js
 ```
 
-Este script realizará las siguientes acciones:
+This script will perform the following actions:
 
-* Se conectará a tu base de datos MongoDB utilizando la cadena de conexión proporcionada en el archivo `.env`.
-* Insertará la información de los parkings predefinidos (o la que se haya configurado en el script `generateSpots.js`).
-* Generará la información detallada de las plazas por cada nivel de parking, simulando la disponibilidad inicial.
+* Connect to your MongoDB database using the connection string provided in the `.env` file.
+* Insert predefined parking information (or whatever is configured in the `generateSpots.js` script).
+* Generate detailed spot information for each parking level, simulating initial availability.
 
-## 🌟 ¿Qué es PK4U?
+---
+## 🌟 What is PK4U?
 
-PK4U es una aplicación web de código abierto que permite la visualización en tiempo real de la disponibilidad de plazas de aparcamiento en diversos establecimientos urbanos. Su objetivo es centralizar esta información en una única plataforma accesible para los ciudadanos, mejorando así la movilidad urbana en el contexto de una Smart City. 
+PK4U is an open-source web application that allows real-time visualization of parking spot availability in various urban establishments. Its objective is to centralize this information on a single accessible platform for citizens, thus improving urban mobility in the context of a Smart City.
 
-### 💻 Componentes Principales de PK4U:
+### 💻 Main Components of PK4U:
 
-El sistema PK4U se compone de varias partes, trabajando en conjunto para ofrecer una solución integral de gestión de aparcamientos:
+The PK4U system consists of several parts, working together to offer a comprehensive parking management solution:
 
-* **Frontend**: La interfaz de usuario intuitiva y reactiva desarrollada con **React.js** que permite a los ciudadanos visualizar los parkings en un mapa interactivo y consultar su disponibilidad en tiempo real. 
-    * **Repositorio Frontend**: [https://github.com/Jefffer/pk4u-frontend](https://github.com/Jefffer/pk4u-frontend)
-* **Backend**: El servidor robusto construido con **Java** y **Spring Boot** que maneja la lógica de negocio, procesa las actualizaciones de los datos de ocupación (simuladas por estos scripts) y sirve la información al Frontend a través de una API RESTful. 
-    * **Repositorio Backend**: [https://github.com/MMunozLo/PK4U-backend.git](https://github.com/MMunozLo/PK4U-backend.git)
-* **DB Scripts (Este Repositorio)**: Esta herramienta es crucial para inicializar y mantener la base de datos, insertando la estructura de spots y generando la información detallada de las plazas por cada planta.
-* **Simulador**
+* **Frontend**: The intuitive and reactive user interface developed with **React.js** that allows citizens to view parking lots on an interactive map and check their real-time availability.
+    * **Frontend Repository**: [https://github.com/Jefffer/pk4u-frontend](https://github.com/Jefffer/pk4u-frontend)
+* **Backend**: The robust server built with **Java** and **Spring Boot** that handles business logic, processes occupancy data updates (simulated by these scripts), and serves information to the Frontend via a RESTful API.
+    * **Backend Repository**: [https://github.com/MMunozLo/PK4U-backend.git](https://github.com/MMunozLo/PK4U-backend.git)
+* **DB Scripts (This Repository)**: This tool is crucial for initializing and maintaining the database, inserting the spot structure and generating detailed spot information for each floor.
+* **Simulator**
 * **API Gateway**
 * **Eureka**
 
-🤝 Contribución
-¡Tu ayuda es bienvenida! Si deseas contribuir a este proyecto de scripts, por favor, siéntete libre de:
+### 🤝 Contribution
+Your help is welcome! If you wish to contribute to this script project, please feel free to:
 
-Abrir una **Issue** para reportar un problema o proponer una mejora.
-Abrir una **Pull Request** con tus cambios y contribuciones.
+* Open an **Issue** to report a problem or propose an improvement.
+* Open a **Pull Request** with your changes and contributions.
 
-### 📄 Licencia
-Este proyecto se distribuye bajo una licencia Open Source, fomentando la colaboración y la transparencia en el desarrollo de soluciones para Smart Cities.
+### 📄 License
+This project is distributed under an Open Source license, encouraging collaboration and transparency in the development of solutions for Smart Cities.
