@@ -1,0 +1,13 @@
+npm init -y
+npm install mongodb dotenv
+
+mongodb: El driver oficial para conectarse a MongoDB.
+dotenv: Para cargar las variables de entorno de un archivo .env de forma segura.
+
+Crear el archivo .env:
+
+En la carpeta db-scripts, crea un archivo llamado .env y añade tu cadena de conexión a MongoDB Atlas.
+
+MONGODB_URI="mongodb+srv://<username>:<password>@<your-cluster-url>/pk4u?retryWrites=true&w=majority"
+
+node generateSpots.js
