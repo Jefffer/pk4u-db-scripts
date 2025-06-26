@@ -43,7 +43,7 @@ For the scripts to establish a connection with your MongoDB database, it's cruci
 MONGODB_URI="mongodb+srv://<username>:<password>@<your-cluster-url>/pk4u?retryWrites=true&w=majority"
 ```
 
-⚠️ Important!
+⚠️ **Important!**
 
 Replace `<username>`, `<password>`, and `<your-cluster-url>` with your own credentials and the URL of your MongoDB Atlas cluster.
 
