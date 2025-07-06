@@ -1,3 +1,11 @@
+<p align="center">
+  <img src="https://github.com/Jefffer/pk4u-frontend/blob/main/public/logo-transparent.png" alt="PK4U Logo" width="120"/>  
+</p>
+
+<p align="center">
+  <img src="https://cdn.freebiesupply.com/logos/large/2x/nodejs-1-logo-png-transparent.png" alt="node" width="160"/>
+</p>
+
 # 🅿️ PK4U-DB-Scripts: Population Tool for MongoDB
 This repository contains Node.js scripts designed to facilitate **initial data population and simulation** in your MongoDB database for the **PK4U (Parking for You)** system. These scripts will allow you to insert parking information and generate parking spot data per floor, which is essential for the application's operation.
 
@@ -65,20 +73,19 @@ This script will perform the following actions:
 ---
 ## 🌟 What is PK4U?
 
-PK4U is an open-source web application that allows real-time visualization of parking spot availability in various urban establishments. Its objective is to centralize this information on a single accessible platform for citizens, thus improving urban mobility in the context of a Smart City.
+In modern cities, finding parking has become a daily challenge that causes stress and unnecessarily increases traffic and pollution. This phenomenon, known as _cruising for parking_, negatively affects the quality of life and urban sustainability.
 
-### 💻 Main Components of PK4U:
+**PK4U** was created to address this problem by offering an open-source solution that centralizes and displays real-time parking availability in a city. Our platform unifies data from multiple parking facilities into a single interface with interactive maps, empowering drivers to make better decisions and contributing to smarter, more sustainable mobility.
 
-The PK4U system consists of several parts, working together to offer a comprehensive parking management solution:
+### 💻 Core Technology Stack
 
-* **Frontend**: The intuitive and reactive user interface developed with **React.js** that allows citizens to view parking lots on an interactive map and check their real-time availability.
-    * **Frontend Repository**: [https://github.com/Jefffer/pk4u-frontend](https://github.com/Jefffer/pk4u-frontend)
-* **Backend**: The robust server built with **Java** and **Spring Boot** that handles business logic, processes occupancy data updates (simulated by these scripts), and serves information to the Frontend via a RESTful API.
-    * **Backend Repository**: [https://github.com/MMunozLo/PK4U-backend.git](https://github.com/MMunozLo/PK4U-backend.git)
-* **DB Scripts (This Repository)**: This tool is crucial for initializing and maintaining the database, inserting the spot structure and generating detailed spot information for each floor.
-* **Simulator**
-* **API Gateway**
-* **Eureka**
+| Área                | Tecnologías Clave                                                              |
+| ------------------- | ------------------------------------------------------------------------------ |
+| **Frontend** | `React` `Vite` `React Router` `Tailwind CSS` `Leaflet` `i18next`                 |
+| **Backend** | `Java` `Spring Boot` `Spring Cloud`                                            |
+| **Data & Search**| `MongoDB` `Elasticsearch`                                                      |
+| **Communication** | `REST API` `RabbitMQ`                                                          |
+| **Architecture** | `Microservicios` `API Gateway` `Service Registry (Eureka)`                     |
 
 ### 🤝 Contribution
 Your help is welcome! If you wish to contribute to this script project, please feel free to:
