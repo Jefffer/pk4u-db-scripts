@@ -1,3 +1,4 @@
+<!--
 <p align="center">
   <img src="https://github.com/Jefffer/pk4u-frontend/blob/main/public/logo-transparent.png" alt="PK4U Logo" width="120"/>  
 </p>
@@ -5,8 +6,19 @@
 <p align="center">
   <img src="https://cdn.freebiesupply.com/logos/large/2x/nodejs-1-logo-png-transparent.png" alt="node" width="160"/>
 </p>
+-->
+<div align="center">
+  <img src="https://github.com/Jefffer/pk4u-frontend/blob/main/public/logo-transparent.png?raw=true" alt="PK4U Logo" width="80"/>
+  <h1>PK4U-DB-Scripts: Population Tool for MongoDB</h1>
+  <p>
+    <em>The interactive web interface for the PK4U Smart Parking System.</em>
+  </p>
+  <p>
+    <img src="https://img.shields.io/badge/Node.js-18+-green.svg?style=for-the-badge&logo=node.js&logoColor=green" alt="Node.js"/>
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" alt="License: MIT"/>
+  </p>
+</div>
 
-# 🅿️ PK4U-DB-Scripts: Population Tool for MongoDB
 This repository contains Node.js scripts designed to facilitate **initial data population and simulation** in your MongoDB database for the **PK4U (Parking for You)** system. These scripts will allow you to insert parking information and generate parking spot data per floor, which is essential for the application's operation.
 
 ## 🚀 Getting Started
