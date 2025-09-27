@@ -1,5 +1,5 @@
 require("dotenv").config();
-const { MongoClient, ObjectId } = require("mongodb");
+import { MongoClient, ObjectId } from "mongodb";
 
 // URI de conexión a tu base de datos MongoDB Atlas
 const uri = process.env.MONGODB_URI;
